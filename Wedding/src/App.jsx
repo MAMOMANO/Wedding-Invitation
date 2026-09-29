@@ -3,7 +3,7 @@ import Hero from "./components/Hero";
 import Verse from "./components/Verse";
 // import { useGSAP } from "@gsap/react";
 import MempelaiPria from "./components/MempelaiPria";
-import Countdown from "./components/CountDown";
+import Countdown from "./components/Countdown";
 // import Salam from "./components/Salam";
 import MempelaiWanita from "./components/MempelaiWanita";
 import EventDetails from "./components/EventDetails";
