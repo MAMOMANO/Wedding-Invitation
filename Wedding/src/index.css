@@ -1,0 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=EB+Garamond:wght@400;500;600&family=Roboto:wght@400;500;600&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Playfair Display", serif;
+  --font-body: "EB Garamond", serif;
+  --font-label: "Roboto", sans-serif;
+}
+
+body {
+  background-color: #1a1a1a;
+}
