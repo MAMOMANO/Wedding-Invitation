@@ -1,19 +1,36 @@
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import bghero from "../assets/FGM (15).webp";
+// GANTI path ini sesuai nama file lagu kamu, taruh filenya di folder src/assets/
+import musikLatar from "../assets/musik-latar.mp3";
 
 export default function Hero({ handleScroll }) {
   const [ubahTombol, setUbahTombol] = useState(false);
+  const [isMuted, setIsMuted] = useState(false);
   const nama =
     new URLSearchParams(window.location.search).get("nama") || "Tamu Undangan";
   const overlayRef = useRef();
+  const audioRef = useRef();
 
   function handleBuka() {
+    // Mulai muter lagu bareng animasi overlay memudar.
+    // .play() itu method bawaan elemen <audio> buat mulai muter.
+    // Dibungkus try/catch karena beberapa browser bisa menolak play
+    // meski sudah dipicu klik user, biar tidak bikin error yang
+    // menghentikan animasi overlay-nya.
+    audioRef.current?.play().catch(() => {});
+
     gsap.to(overlayRef.current, {
       opacity: 0,
       duration: 0.6,
       onComplete: () => setUbahTombol(true),
     });
+  }
+
+  function toggleMute() {
+    if (!audioRef.current) return;
+    audioRef.current.muted = !audioRef.current.muted;
+    setIsMuted(audioRef.current.muted);
   }
 
   useEffect(() => {
@@ -25,6 +42,22 @@ export default function Hero({ handleScroll }) {
 
   return (
     <>
+      {/* loop: lagu ulang terus dari awal kalau sudah habis.
+          playsInline: penting khusus iOS Safari, biar audio tidak
+          otomatis fullscreen atau berlaku aneh saat diputar. */}
+      <audio ref={audioRef} src={musikLatar} loop playsInline />
+
+      {/* Tombol mute/unmute, muncul setelah undangan dibuka */}
+      {ubahTombol && (
+        <button
+          onClick={toggleMute}
+          aria-label={isMuted ? "Nyalakan suara" : "Matikan suara"}
+          className="fixed top-4 right-4 z-30 w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm border border-white/40 shadow-md flex items-center justify-center text-white cursor-pointer hover:bg-white/30 transition-colors duration-200"
+        >
+          {isMuted ? "🔇" : "🔊"}
+        </button>
+      )}
+
       {!ubahTombol && (
         <div
           ref={overlayRef}
