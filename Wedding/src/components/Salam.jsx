@@ -1,8 +1,33 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import gsap from "gsap";
 
 export default function Amplop() {
   const [tersalin, setTersalin] = useState(false);
   const noRekening = "1234567890";
+  const salam = useRef();
+  const salamkonten = useRef();
+  const salamtitle = useRef();
+  const salamrek = useRef();
+  const salamparagraf = useRef();
+
+  useEffect(() => {
+    const trigger = gsap.context(() => {
+      const time = gsap.timeline({
+        scrollTrigger: {
+          trigger: salam.current,
+          start: "top 80%",
+          toggleActions: "play reverse play reverse",
+        },
+      });
+      time.from(salamkonten.current,{
+        opacity: 0,
+        y: 60,
+        duration: 1,
+        ease: "power2.inOut"
+      })
+    });
+    return () => trigger.revert();
+  }, []);
 
   async function handleCopy() {
     try {
@@ -28,24 +53,39 @@ export default function Amplop() {
   }
 
   return (
-    <section className="w-full min-h-svh flex items-center justify-center px-6 py-16 bg-black">
+    <section
+      ref={salam}
+      className="w-full min-h-svh flex items-center justify-center px-6 py-16 bg-black"
+    >
       <div className="w-full max-w-md flex flex-col items-center text-center">
-        <p className="text-xs font-label tracking-[0.3em] uppercase text-white/40">
+        <p
+          ref={salamtitle}
+          className="text-xs font-label tracking-[0.3em] uppercase text-white/40"
+        >
           Wedding Gift
         </p>
 
-        <h2 className="mt-3 font-display text-4xl font-semibold text-white">
+        <h2
+          ref={salamparagraf}
+          className="mt-3 font-display text-4xl font-semibold text-white"
+        >
           Tanda Kasih
         </h2>
 
         <div className="w-10 h-px bg-white/20 my-5"></div>
 
-        <p className="max-w-xs text-sm font-body leading-relaxed text-white/60">
+        <p
+          ref={salamkonten}
+          className="max-w-xs text-sm font-body leading-relaxed text-white/60"
+        >
           Doa dan kehadiran Anda merupakan hadiah terindah bagi kami. Bagi yang
           ingin memberikan tanda kasih, dapat melalui rekening berikut.
         </p>
 
-        <div className="w-full mt-10 bg-white/5 border border-white/15 rounded-2xl px-8 py-8 flex flex-col items-center">
+        <div
+          ref={salamrek}
+          className="w-full mt-10 bg-white/5 border border-white/15 rounded-2xl px-8 py-8 flex flex-col items-center"
+        >
           <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white font-display text-lg font-semibold">
             BCA
           </div>

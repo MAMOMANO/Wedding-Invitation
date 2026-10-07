@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, use } from "react";
 import bgrsvp from "../assets/FGM (20).webp";
 import { db } from "../firebase";
 import {
@@ -9,6 +9,7 @@ import {
   query,
   serverTimestamp,
 } from "firebase/firestore";
+import gsap from "gsap";
 
 export default function RSVP() {
   const [daftarTamu, setDaftarTamu] = useState([]);
@@ -29,6 +30,56 @@ export default function RSVP() {
   const ucapanTampil = daftarTamu.slice(indexPertama, indexTerakhir);
 
   const totalHalaman = Math.ceil(daftarTamu.length / ucapanPerHalaman);
+
+  const rsvp = useRef();
+  const rsvpjudul = useRef();
+  const rsvplabel = useRef();
+  const rsvpkonten = useRef();
+  const rsvpGaris = useRef();
+  const formrsvp = useRef();
+
+
+  useEffect(() => {
+    const trigersvp = gsap.context(() => {
+      const time = gsap.timeline({
+        scrollTrigger: {
+          trigger: rsvp.current,
+          start: "top 80%",
+          toggleActions: "play reverse play reverse",
+        },
+      });
+      time.from(rsvplabel.current, {
+        opacity: 0,
+        duration: 1.8,
+        x: 150,
+        ease: "power2.out",
+      });
+      time.from(rsvpjudul.current, {
+        opacity: 0,
+        duration: 1.8,
+        x: -150,
+        ease: "power2.out",
+      },"<");
+      time.from(rsvpkonten.current, {
+        opacity: 0,
+        duration: 1.8,
+        y: 60,
+        ease: "power2.out",
+      },"<");
+      time.from(rsvpGaris.current, {
+        opacity: 0,
+        duration: 1.8,
+        ease: "power2.out",
+      },"<");
+      time.from(formrsvp.current, {
+        opacity: 0,
+        y:60,
+        duration: 1.8,
+        ease: "power2.out",
+      },"<");
+    });
+    return () => trigersvp.revert();
+  },[]);
 
   // Ambil semua ucapan dari Firestore, urutan terbaru duluan.
   // Dipisah jadi function sendiri karena dipanggil di 2 tempat:
@@ -82,7 +133,10 @@ export default function RSVP() {
   }
 
   return (
-    <section className="relative min-h-svh w-full flex flex-col px-6 py-16 text-white">
+    <section
+      ref={rsvp}
+      className="relative min-h-svh w-full flex flex-col px-6 py-16 text-white"
+    >
       {/* Background */}
       <img
         src={bgrsvp}
@@ -96,23 +150,32 @@ export default function RSVP() {
       <div className="relative z-10 w-full max-w-md mx-auto flex flex-col">
         {/* Header */}
         <header className="flex flex-col items-center text-center mb-10">
-          <p className="text-xs font-label tracking-[0.3em] uppercase text-white/70">
+          <p
+            ref={rsvplabel}
+            className="text-xs font-label tracking-[0.3em] uppercase text-white/70"
+          >
             RSVP
           </p>
 
-          <h2 className="mt-3 font-display text-4xl font-semibold tracking-wide">
+          <h2
+            ref={rsvpjudul}
+            className="mt-3 font-display text-4xl font-semibold tracking-wide"
+          >
             Wishes
           </h2>
 
-          <div className="w-10 h-px bg-white/40 my-4"></div>
+          <div ref={rsvpGaris} className="w-10 h-px bg-white/40 my-4"></div>
 
-          <p className="max-w-xs text-xs font-body leading-relaxed text-white/70">
+          <p
+            ref={rsvpkonten}
+            className="max-w-xs text-xs font-body leading-relaxed text-white/70"
+          >
             Berikan konfirmasi kehadiran dan ucapan untuk kami.
           </p>
         </header>
 
         {/* Form */}
-        <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+        <form ref={formrsvp} onSubmit={handleSubmit} className="flex flex-col gap-5">
           <div className="flex flex-col gap-2">
             <label
               htmlFor="nama"

@@ -5,7 +5,7 @@ import img4 from "../assets/FGM (7).webp";
 import img5 from "../assets/FGM (6).webp";
 import img6 from "../assets/FGM (2).webp";
 import img7 from "../assets/FGM (3).webp";
-import img8 from "../assets/FGM (4).webp";
+import img8 from "../assets/FGM (1).webp";
 
 
 export const img = [
