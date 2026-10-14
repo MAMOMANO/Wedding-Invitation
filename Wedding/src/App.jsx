@@ -13,6 +13,7 @@ import Close from "./components/Close";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
 import Amplop from "./components/Salam";
+import Generator from "./components/Generator";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -22,23 +23,15 @@ ScrollTrigger.config({
 
 export default function App() {
   const TargetScroll = useRef(null);
-  // const GambarLoad = [fixbunga4, bmekar, mkr2, corner1];
-  // const [isLoad, setIsLoad] = useState(true);
-
-  // useEffect(() => {
-  //   const sapromise = GambarLoad.map((src) => {
-  //     return new Promise((resolve) => {
-  //       const img = new Image();
-  //       img.src = src;
-  //       img.onload = () => resolve();
-  //     });
-  //   });
-
-  //   Promise.all(sapromise).then(() => {
-  //     setIsLoad(false);
-  //   });
-  // }, []);
-
+  const params = new URLSearchParams(window.location.search);
+  console.log(params.get("mode"), params.get("key"));
+  if (
+    params.get("mode") === "generator" &&
+    params.get("key") === "yosefmaria2026"
+  ) {
+    return <Generator />;
+  }
+  const tampilRek = params.get("rek") === "1";
   function tombolScroll() {
     TargetScroll.current.scrollIntoView({
       behavior: "smooth",
@@ -55,7 +48,7 @@ export default function App() {
       <EventDetails />
       <Gallery />
       <RSVP />
-      <Amplop />
+      {tampilRek && <Amplop />}
       <Close />
     </div>
   );

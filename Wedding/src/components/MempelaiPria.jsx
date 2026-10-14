@@ -19,11 +19,11 @@ export default function MempelaiPria() {
         <h3 className="font-body text-xl">Yoshep Sira Hadjon</h3>
 
         <p className="mt-5 text-xs font-label tracking-widest uppercase text-white/60">
-          Putra tunggal dari
+          Putra dari
         </p>
         <p className="mt-1 font-body text-base text-white/90 leading-relaxed">
-          Bapak Ignasius Ngembang
-          <br />& Ibu Fransiska Nggola
+          Bapak Gradus Mela Hadjon (Alm)
+          <br />& Ibu Maria Pire
         </p>
       </div>
     </div>

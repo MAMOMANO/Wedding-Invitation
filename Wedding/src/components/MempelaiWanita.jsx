@@ -11,18 +11,18 @@ export default function MempelaiWanita() {
 
       <div className="relative text-white max-w-xs">
         <p className="text-xs font-label tracking-[0.3em] uppercase text-white/70">
-          The Groom
+          The Bride
         </p>
         <h2 className="font-display text-5xl font-semibold mt-3">Maria</h2>
         <div className="w-10 h-px bg-white/40 my-4"></div>
         <h3 className="font-body text-xl">Maria Mahdalena Dwi Setyorini</h3>
 
         <p className="mt-5 text-xs font-label tracking-widest uppercase text-white/60">
-          Putri Pertama Dari
+          Putri Dari
         </p>
         <p className="mt-1 font-body text-base text-white/90 leading-relaxed">
-          Bapak Ignasius Ngembang
-          <br />& Ibu Fransiska Nggola
+          Bapak Fransiscus Ucok Bonar (Alm)
+          <br />& Ibu Agustina Maitini
         </p>
       </div>
     </div>

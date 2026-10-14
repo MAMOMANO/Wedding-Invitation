@@ -6,6 +6,8 @@ import img5 from "../assets/FGM (6).webp";
 import img6 from "../assets/FGM (2).webp";
 import img7 from "../assets/FGM (3).webp";
 import img8 from "../assets/FGM (1).webp";
+import img9 from "../assets/FGM (13).webp";
+import img10 from "../assets/new.webp";
 
 
 export const img = [
@@ -34,11 +36,19 @@ export const img = [
     foto: img6
   },
   {
-    name: 6,
+    name: 7,
     foto: img7
   },
   {
-    name: 6,
+    name: 8,
     foto: img8
+  },
+  {
+    name: 9,
+    foto: img9
+  },
+  {
+    name: 10,
+    foto: img10
   },
 ];
