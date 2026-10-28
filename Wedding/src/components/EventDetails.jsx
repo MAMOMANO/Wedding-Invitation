@@ -16,7 +16,7 @@ const acara = [
     jam: "Pukul 16:00 - Selesai",
     tempat: "SDS Stella Maris Jakarta",
     alamat:
-      "Jalan Teluk Gong Raya No.19 BC, Jl. Teluk Gong Raya 12, RT.12/RW.10, Pejagalan, Penjaringan, Jakarta Utara 14450",
+      "Jl. Lele No.1 Blk A1, RT.4/RW.13, Pejagalan, Kecamatan Penjaringan, Jkt Utara, Daerah Khusus Ibukota Jakarta 14450",
     peta: "https://maps.app.goo.gl/T7v5Cpg2LnrvwEPK9",
   },
 ];

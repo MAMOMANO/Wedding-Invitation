@@ -23,7 +23,7 @@ import { useState } from "react";
 
 // 🏨 *Resepsi Pernikahan*
 // 📍 [SDS Stella Maris Jakarta]
-//     [Jalan Teluk Gong Raya No.19 BC, Jl. Teluk Gong Raya 12, RT.12/RW.10, Pejagalan, Penjaringan, Jakarta Utara 14450]
+//     [Jl. Lele No.1 Blk A1, RT.4/RW.13, Pejagalan, Kecamatan Penjaringan, Jkt Utara, Daerah Khusus Ibukota Jakarta 14450]
 // ⏰ Pk. [Pukul 16:00 - Selesai] WIB
 
 // Detail lengkap undangan dan konfirmasi kehadiran dapat dilihat melalui link berikut:
@@ -49,11 +49,11 @@ Sabtu, 21 November 2026
 \u26EA\uFE0F *Pemberkatan Pernikahan*
 \u{1F4CD} Gereja St. Philipus Rasul
 Jl. Teluk Gong Raya No.19 BC, Jl. Teluk Gong Raya 12, RT.12/RW.10, Pejagalan, Penjaringan, Jakarta Utara 14450
-\u23F0 Pukul 10:00 WIB - selesai
+\u23F0 Pukul 11:00 WIB - selesai
 
 \u{1F3E8} *Resepsi Pernikahan*
 \u{1F4CD} SDS Stella Maris Jakarta
-Jl. Teluk Gong Raya No.19 BC, Jl. Teluk Gong Raya 12, RT.12/RW.10, Pejagalan, Penjaringan, Jakarta Utara 14450
+Jl. Lele No.1 Blk A1, RT.4/RW.13, Pejagalan, Kecamatan Penjaringan, Jkt Utara, Daerah Khusus Ibukota Jakarta 14450
 \u23F0 Pukul 16:00 WIB - selesai
 
 Detail lengkap undangan dan konfirmasi kehadiran dapat dilihat melalui link berikut:
