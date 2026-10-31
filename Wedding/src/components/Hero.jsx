@@ -37,7 +37,6 @@ export default function Hero({ handleScroll }) {
 
   return (
     <>
-     
       <audio ref={audioRef} src={musikLatar} loop playsInline />
 
       {/* Tombol mute/unmute, muncul setelah undangan dibuka */}
@@ -54,7 +53,7 @@ export default function Hero({ handleScroll }) {
       {!ubahTombol && (
         <div
           ref={overlayRef}
-          className="fixed inset-x-0 bottom-0 z-20 flex justify-center pb-8"
+          className="fixed inset-x-0 bottom-0 z-20 flex justify-center pb-8 lg:left-auto lg:w-107.5"
         >
           <button
             onClick={handleBuka}
