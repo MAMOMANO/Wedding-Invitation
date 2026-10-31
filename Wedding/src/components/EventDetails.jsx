@@ -4,7 +4,7 @@ const acara = [
   {
     judul: "Pemberkatan",
     tanggal: "21 November 2026",
-    jam: "Pukul 10:00 - Selesai",
+    jam: "Pukul 11:00 - Selesai",
     tempat: "Gereja St. Philipus Rasul",
     alamat:
       "Jalan Teluk Gong Raya No.19 BC, Jl. Teluk Gong Raya 12, RT.12/RW.10, Pejagalan, Penjaringan, Jakarta Utara 14450",
