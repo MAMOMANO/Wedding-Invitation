@@ -13,11 +13,6 @@ export default function Hero({ handleScroll }) {
   const audioRef = useRef();
 
   function handleBuka() {
-    // Mulai muter lagu bareng animasi overlay memudar.
-    // .play() itu method bawaan elemen <audio> buat mulai muter.
-    // Dibungkus try/catch karena beberapa browser bisa menolak play
-    // meski sudah dipicu klik user, biar tidak bikin error yang
-    // menghentikan animasi overlay-nya.
     audioRef.current?.play().catch(() => {});
 
     gsap.to(overlayRef.current, {
@@ -42,9 +37,7 @@ export default function Hero({ handleScroll }) {
 
   return (
     <>
-      {/* loop: lagu ulang terus dari awal kalau sudah habis.
-          playsInline: penting khusus iOS Safari, biar audio tidak
-          otomatis fullscreen atau berlaku aneh saat diputar. */}
+     
       <audio ref={audioRef} src={musikLatar} loop playsInline />
 
       {/* Tombol mute/unmute, muncul setelah undangan dibuka */}
@@ -86,7 +79,7 @@ export default function Hero({ handleScroll }) {
             The Wedding Of
           </p>
           <h1 className="mt-3 flex flex-col items-center font-display font-semibold tracking-wide">
-            <span className="text-4xl sm:text-5xl">Yosef</span>
+            <span className="text-4xl sm:text-5xl">Yoshep</span>
             <span className="-my-1 text-2xl italic font-normal text-white/60">
               &
             </span>

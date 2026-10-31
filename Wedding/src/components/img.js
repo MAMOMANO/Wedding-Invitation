@@ -13,7 +13,7 @@ import img10 from "../assets/new.webp";
 export const img = [
   {
     name: 1,
-    foto: img1
+    foto: img6
   },
   {
     name: 2,
@@ -33,7 +33,7 @@ export const img = [
   },
   {
     name: 6,
-    foto: img6
+    foto: img1
   },
   {
     name: 7,
@@ -43,10 +43,10 @@ export const img = [
     name: 8,
     foto: img8
   },
-  {
-    name: 9,
-    foto: img9
-  },
+  // {
+  //   name: 9,
+  //   foto: img9
+  // },
   {
     name: 10,
     foto: img10
