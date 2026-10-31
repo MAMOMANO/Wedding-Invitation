@@ -3,7 +3,7 @@ import gsap from "gsap";
 
 export default function Amplop() {
   const [tersalin, setTersalin] = useState(false);
-  const noRekening = "1234567890";
+  const noRekening = "4811217829";
   const salam = useRef();
   const salamkonten = useRef();
   const salamtitle = useRef();
@@ -19,12 +19,12 @@ export default function Amplop() {
           toggleActions: "play reverse play reverse",
         },
       });
-      time.from(salamkonten.current,{
+      time.from(salamkonten.current, {
         opacity: 0,
         y: 60,
         duration: 1,
-        ease: "power2.inOut"
-      })
+        ease: "power2.inOut",
+      });
     });
     return () => trigger.revert();
   }, []);
@@ -95,7 +95,7 @@ export default function Amplop() {
           </p>
 
           <p className="mt-2 text-xs font-label tracking-widest uppercase text-white/40">
-            a.n. Mariano Antonino
+            a.n. Yoshep Sira
           </p>
 
           <button

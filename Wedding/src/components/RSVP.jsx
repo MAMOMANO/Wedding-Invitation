@@ -255,7 +255,7 @@ export default function RSVP() {
         {/* Wishes */}
         {daftarTamu.length > 0 && (
           <div className="mt-16 w-full max-w-md">
-            <div className="h-[500px] flex flex-col">
+            <div className="h-125 flex flex-col">
               {/* Judul */}
               <div className="flex flex-col items-center text-center mb-6">
                 <p className="text-[11px] font-label tracking-widest uppercase text-white/60">
